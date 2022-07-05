@@ -1,0 +1,10 @@
+.errorh1{
+    color: white;
+    margin-top: 200px;
+}
+
+.errorbg{
+    background-size: cover;
+    width: 100%;
+  height: 100vh;
+}

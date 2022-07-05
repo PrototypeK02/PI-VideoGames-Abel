@@ -1,0 +1,41 @@
+.HomeBackground{
+    background-color: black;
+    background-size:cover;
+    width: 100%;
+  height: 150vh;
+}
+
+.buttonH3{
+    color: azure;
+
+}
+
+.CreateBtn{
+    
+        box-shadow:inset 0px -2px 3px 0px #538a83;
+        background:linear-gradient(to bottom, #000000 5%, #424d4d 100%);
+        background-color:#000000;
+        border-radius:20px;
+        border:1px solid #000000;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:13px;
+        font-weight:bold;
+        padding:11px 47px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+        float:right;
+        position: relative;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    .CreatBtn:hover {
+        background:linear-gradient(to bottom, #424d4d 5%, #000000 100%);
+        background-color:#424d4d;
+    }
+    .CreateBtn:active {
+        position:relative;
+        top:1px;
+    }
