@@ -21,12 +21,15 @@ async function getGameId(req,res,next) {
 }
 
 )
+if(!videoGameDB) {
+  return res.status(400).send("This id Does not Exists")
+}
 
   
 
+console.log(videoGameDB)
 
-
-if(videoGameDB) {
+if(videoGameDB || videoGameDB.length > 0) {
 let finalgame1 = {
   id: videoGameDB.id,
   name: videoGameDB.name,
@@ -38,12 +41,9 @@ let finalgame1 = {
   genres: videoGameDB.genres
  
 };
-
+console.log(videoGameDB.platform)
 res.send(videoGameDB)
 
-}
-else {
-  return res.status(404).send("Not Found")
 }
 }
 else {

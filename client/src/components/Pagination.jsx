@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch,useSelector} from "react-redux"
 import changePage from "../action/changePage";
 import getPagination from "../action/getPagination";
@@ -19,7 +19,7 @@ export function Pagination() {
     const pageData= useSelector(state => state.paginationPages)
     const referenceState = useSelector(state => state.allVideoGames)
     const backUp = useSelector(state => state.backUpState)
-    let [filters, setFilters] = useState([])
+
 
     useEffect(() => {
         getPagination(pageData,referenceState,dispatch)
@@ -42,13 +42,13 @@ export function Pagination() {
           
           <label>Search by Pages</label>
           <button className="buttonfilter1"onClick={() => {return changeBack(dispatch,pageData,referenceState)}}>Prev</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>1</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>2</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>3</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>4</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>5</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>6</button>
-           <button className="buttonfilter1"onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>7</button>
+           <button className={pageData !== 1 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>1</button>
+           <button className={pageData !== 2 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>2</button>
+           <button className={pageData !== 3 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>3</button>
+           <button className={pageData !== 4 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>4</button>
+           <button className={pageData !== 5 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>5</button>
+           <button className={pageData !== 6 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>6</button>
+           <button className={pageData !== 7 ?"buttonfilter1": "buttonfilter2"}onClick={(event)=> {return changePage(event,referenceState,dispatch)}}>7</button>
            <button className="buttonfilter1"onClick={() => {return changeNext(dispatch,pageData,referenceState)}}>Next</button>  
 
 

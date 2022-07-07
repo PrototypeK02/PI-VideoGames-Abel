@@ -5,9 +5,7 @@ import "./styles/filterButtons.css"
 
 function Filter() {
   let [controlFilter, setReference] = useState([])
-  let [stylesF, setStyles] = useState({
-
-  })
+  
     let genres = ["Action",
     "Indie",
     "Adventure",
@@ -95,7 +93,7 @@ function Filter() {
     function filterCreated() {
       let notFiltered =[]
       let filtered = allGamesBD.filter(e => {
-          let founded = e.id == 10
+          let founded = e.id.length > 10
           if(founded) {
           return e
           }
@@ -106,6 +104,7 @@ function Filter() {
       
       dispatch({type: PRE_FILTER, payload: notFiltered })
         if(filtered.length > 0) {
+          dispatch({type:CHANGE_PAGE, payload: 1})
         dispatch({type: GET_ALL_GAMES, payload: filtered})
         return dispatch({type: SET_PAGE_STATE, payload: filtered})
         }
@@ -124,7 +123,7 @@ function Filter() {
     <label>Filter By Genres</label>
     {genres.map((el,i) => <button key={i} className={!controlFilter.includes(el) ? "buttonfilter1" :"buttonfilter2" } onClick={() => filterItems(el)}>{el}</button>)}
     <button className="buttonfilter1"onClick={()=> filterCreated()}>Created by User</button>
-    <button className="buttonfilter1"onClick={()=> {return setReference(controlFilter = []), dispatch({type: GET_ALL_GAMES, payload: backUp }), dispatch({type: SET_PAGE_STATE, payload: backUp.slice(0,15)})}}>Show All</button>
+    <button className="buttonfilter1"onClick={()=> {return setReference(controlFilter = []), dispatch({type: GET_ALL_GAMES, payload: backUp }), dispatch({type: CHANGE_PAGE, payload: 1}), dispatch({type: SET_PAGE_STATE, payload: backUp.slice(0,15)})}}>Show All</button>
 </div>
   )
 }
