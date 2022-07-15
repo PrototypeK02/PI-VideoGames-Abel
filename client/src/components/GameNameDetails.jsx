@@ -36,6 +36,7 @@ export default function GameNameDetails() {
         
         {details&& details.map(el => {
             return (
+                <div className='post1'>
                 <div key={el.id} className="post">
                 <Link className='link' to={`/gamedetail/${el.id}`}>
                 
@@ -43,6 +44,7 @@ export default function GameNameDetails() {
                     <img src={el.image? el.image: "https://s3.envato.com/files/10065422/Extra%20Previews/06_Preview6.png"} alt="" />
                
                 </Link>
+                </div>
                 </div>
             )
         })}

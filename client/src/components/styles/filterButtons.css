@@ -3,7 +3,8 @@
 
 
 .buttonfilter1{
-    
+    justify-content: center;
+    align-items: center;
     background-color: rgb(7, 7, 7);
     color: white;
     border-radius: 20px;
@@ -12,12 +13,14 @@
     cursor: pointer;
     border-color: white;
     font-size: 11px;
+    padding-left: 20px;
+    margin-left: 10px;
 
 }
 
 .buttonfilter2{
    
-    background-color: rgb(68, 68, 122);
+    background-color: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
     color: rgb(0, 0, 0);
     border-radius: 5px;
     font-weight: bold;
@@ -25,4 +28,49 @@
     cursor: pointer;
     border-color: rgb(99, 7, 7);
     border: 10px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.selectname{
+    justify-content: right;
+    float:left;
+    padding-left: 90px;
+    padding-top: 20px;
+}
+
+.pagination{
+    
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.filtercontainer{
+    padding-top: 20px;
+    padding-left: 90px;
+    float: right;
+    padding-right: 140px;
+
+}
+
+.select{
+    outline: none;
+    border: 1px solid #303030;
+    background: #212121;
+    color: #9453b3;
+    letter-spacing: 2px;
+    font-size: 13px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+   }
+   
+   select:hover {
+    box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+    transition-delay: 0.2s;
+   
 }

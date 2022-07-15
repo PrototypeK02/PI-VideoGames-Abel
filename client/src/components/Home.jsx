@@ -11,6 +11,7 @@ import getPagination from "../action/getPagination";
 import "./styles/home.css"
 
 
+
 export function Home() {
     const pageData= useSelector(state => state.paginationPages)
     const dispatch = useDispatch()
@@ -42,13 +43,15 @@ export function Home() {
            
             {allGamesBD[0] && videoGames.map((el,i) => {
                 return (
+                    <div className="post1">
                     <Link key={i}className="link" to={`/gamedetail/${el.id}`}>
                     <div className="post">
                         <h3 key={el.id} className="buttonH3">{el.name}</h3>
                         <img key={el.name}src={el.image} alt="" srcSet="" />
-                        {el.genres.map((e,i) => <span key={i} className="buttonH3">{e.name}</span>)}
+                       { el.genres.map((e,i) => <span key={i} className="buttonH3">{e.name}</span>)}
                     </div>
                     </Link>
+                    </div>
                 )
             }) }
 

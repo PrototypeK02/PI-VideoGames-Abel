@@ -115,15 +115,28 @@ function Filter() {
     }
 
 
-
+    let handleSelect = (e) => {
+      // eslint-disable-next-line default-case
+      if(e.target.value === "Created by User"){
+        return filterCreated()
+      }
+      if(e.target.value === "Show All"){
+        return setReference(controlFilter = []), dispatch({type: GET_ALL_GAMES, payload: backUp }), dispatch({type: CHANGE_PAGE, payload: 1}), dispatch({type: SET_PAGE_STATE, payload: backUp.slice(0,15)})
+      }
+      else{
+        return filterItems(e.target.value)
+      }
+    }
 
 
   return (
     <div className="filtercontainer">
     <label>Filter By Genres</label>
-    {genres.map((el,i) => <button key={i} className={!controlFilter.includes(el) ? "buttonfilter1" :"buttonfilter2" } onClick={() => filterItems(el)}>{el}</button>)}
-    <button className="buttonfilter1"onClick={()=> filterCreated()}>Created by User</button>
-    <button className="buttonfilter1"onClick={()=> {return setReference(controlFilter = []), dispatch({type: GET_ALL_GAMES, payload: backUp }), dispatch({type: CHANGE_PAGE, payload: 1}), dispatch({type: SET_PAGE_STATE, payload: backUp.slice(0,15)})}}>Show All</button>
+    <select className="select" onChange={(e) => handleSelect(e)}>
+    {genres.map((el,i) => <option key={i} className="select" onClick={() => filterItems(el)}>{el}</option>)}
+    <option className="select"onClick={()=> filterCreated()}>Created by User</option>
+    <option className="select"onClick={()=> {return setReference(controlFilter = []), dispatch({type: GET_ALL_GAMES, payload: backUp }), dispatch({type: CHANGE_PAGE, payload: 1}), dispatch({type: SET_PAGE_STATE, payload: backUp.slice(0,15)})}}>Show All</option>
+    </select>
 </div>
   )
 }
